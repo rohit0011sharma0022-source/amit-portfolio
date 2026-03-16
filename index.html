@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amit | Video Editor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 10%;
+}
+
+nav h2{
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero img{
+width:150px;
+height:150px;
+border-radius:50%;
+border:4px solid #38bdf8;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+margin-top:10px;
+opacity:.8;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 28px;
+background:#38bdf8;
+color:black;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+section{
+padding:90px 10%;
+text-align:center;
+}
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:15px;
+margin-top:30px;
+}
+
+.skills{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
+}
+
+.skill{
+width:220px;
+padding:25px;
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+transition:.3s;
+}
+
+.skill:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.1);
+}
+
+.videos{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+margin-top:40px;
+}
+
+video{
+width:320px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.contact p{
+margin-top:10px;
+}
+
+footer{
+margin-top:50px;
+padding:30px;
+text-align:center;
+opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>Amit</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="hero">
+
+<img src="profile.jpg">
+
+<h1>Hi, I'm <span>Amit</span></h1>
+
+<p>B Pharmacy Student | Creative Video Editor</p>
+
+<a class="btn" href="cv.pdf">Download CV</a>
+
+</div>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="glass">
+
+<p>
+I’m Amit, a B Pharmacy student with a strong passion for video editing and creative storytelling.  
+I specialize in editing engaging Instagram reels, cinematic edits, and social media content.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<h3>Video Editing</h3>
+<p>Professional video editing with smooth cuts.</p>
+</div>
+
+<div class="skill">
+<h3>Cinematic Effects</h3>
+<p>Creative color grading and transitions.</p>
+</div>
+
+<div class="skill">
+<h3>Social Media Content</h3>
+<p>Instagram reels & short-form videos.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="work">
+
+<h2>My Work</h2>
+
+<div class="videos">
+
+<video controls>
+<source src="video1.mp4">
+</video>
+
+<video controls>
+<source src="video2.mp4">
+</video>
+
+<video controls>
+<source src="video3.mp4">
+</video>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact">
+
+<p>Email: your@email.com</p>
+<p>Instagram: @yourusername</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Amit | Portfolio</p>
+
+</footer>
+
+</body>
+</html>
