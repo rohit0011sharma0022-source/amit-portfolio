@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amit | Video Editor</title>
+
+<title>AmitVisuals | Creative Video Editor</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -17,39 +18,27 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#020617,#0f172a);
+background:#0a0f1c;
 color:white;
 }
 
-nav{
+header{
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:25px 10%;
-}
-
-nav h2{
-color:#38bdf8;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
+padding:20px 10%;
+background:#020617;
+position:fixed;
+width:100%;
 }
 
 nav a{
+margin:0 15px;
 color:white;
 text-decoration:none;
-transition:.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
 }
 
 .hero{
-height:90vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -57,143 +46,95 @@ align-items:center;
 text-align:center;
 }
 
-.hero img{
-width:150px;
-height:150px;
-border-radius:50%;
-border:4px solid #38bdf8;
-margin-bottom:20px;
-}
-
 .hero h1{
-font-size:50px;
+font-size:48px;
 }
 
 .hero span{
-color:#38bdf8;
-}
-
-.hero p{
-margin-top:10px;
-opacity:.8;
+color:#00bfff;
 }
 
 .btn{
-margin-top:25px;
-padding:12px 28px;
-background:#38bdf8;
-color:black;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
+margin-top:20px;
+padding:12px 25px;
+background:#00bfff;
+border:none;
+border-radius:25px;
+color:white;
+cursor:pointer;
 }
 
 section{
-padding:90px 10%;
+padding:80px 10%;
 text-align:center;
-}
-
-.glass{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-padding:40px;
-border-radius:15px;
-margin-top:30px;
 }
 
 .skills{
 display:flex;
 justify-content:center;
+gap:20px;
 flex-wrap:wrap;
-gap:25px;
-margin-top:30px;
 }
 
 .skill{
-width:220px;
-padding:25px;
-background:rgba(255,255,255,0.05);
-border-radius:12px;
-transition:.3s;
+background:#111827;
+padding:15px 25px;
+border-radius:8px;
 }
 
-.skill:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,0.1);
-}
-
-.videos{
-display:flex;
-flex-wrap:wrap;
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-justify-content:center;
-margin-top:40px;
 }
 
-video{
-width:320px;
-border-radius:12px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-.contact p{
-margin-top:10px;
+.project{
+background:#111827;
+padding:20px;
+border-radius:10px;
 }
 
 footer{
-margin-top:50px;
-padding:30px;
 text-align:center;
-opacity:.7;
+padding:20px;
+background:#020617;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<header>
+<h2>AmitVisuals</h2>
+
 <nav>
-
-<h2>Amit</h2>
-
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#work">Work</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#work">Work</a>
+<a href="#contact">Contact</a>
 </nav>
+</header>
 
-<div class="hero">
-
-<img src="profile.jpg">
+<section class="hero">
 
 <h1>Hi, I'm <span>Amit</span></h1>
 
-<p>B Pharmacy Student | Creative Video Editor</p>
+<p>Creative Video Editor & Visual Storyteller</p>
 
-<a class="btn" href="cv.pdf">Download CV</a>
+<button class="btn">View My Work</button>
 
-</div>
+</section>
 
 <section id="about">
 
 <h2>About Me</h2>
 
-<div class="glass">
-
 <p>
-I’m Amit, a B Pharmacy student with a strong passion for video editing and creative storytelling.  
-I specialize in editing engaging Instagram reels, cinematic edits, and social media content.
+I'm Amit, a creative video editor passionate about cinematic edits,
+Instagram reels, and digital storytelling.
 </p>
-
-</div>
 
 </section>
 
@@ -203,20 +144,11 @@ I specialize in editing engaging Instagram reels, cinematic edits, and social me
 
 <div class="skills">
 
-<div class="skill">
-<h3>Video Editing</h3>
-<p>Professional video editing with smooth cuts.</p>
-</div>
-
-<div class="skill">
-<h3>Cinematic Effects</h3>
-<p>Creative color grading and transitions.</p>
-</div>
-
-<div class="skill">
-<h3>Social Media Content</h3>
-<p>Instagram reels & short-form videos.</p>
-</div>
+<div class="skill">Premiere Pro</div>
+<div class="skill">After Effects</div>
+<div class="skill">CapCut</div>
+<div class="skill">Color Grading</div>
+<div class="skill">Motion Graphics</div>
 
 </div>
 
@@ -226,19 +158,22 @@ I specialize in editing engaging Instagram reels, cinematic edits, and social me
 
 <h2>My Work</h2>
 
-<div class="videos">
+<div class="projects">
 
-<video controls>
-<source src="video1.mp4">
-</video>
+<div class="project">
+<h3>YouTube Video Edit</h3>
+<p>Cinematic storytelling edit.</p>
+</div>
 
-<video controls>
-<source src="video2.mp4">
-</video>
+<div class="project">
+<h3>Instagram Reel</h3>
+<p>Fast paced social media edit.</p>
+</div>
 
-<video controls>
-<source src="video3.mp4">
-</video>
+<div class="project">
+<h3>Brand Promotion</h3>
+<p>Creative product video editing.</p>
+</div>
 
 </div>
 
@@ -248,18 +183,15 @@ I specialize in editing engaging Instagram reels, cinematic edits, and social me
 
 <h2>Contact</h2>
 
-<div class="contact">
-
 <p>Email: your@email.com</p>
-<p>Instagram: @yourusername</p>
 
-</div>
+<p>Instagram: @amitvisuals</p>
 
 </section>
 
 <footer>
 
-<p>© 2026 Amit | Portfolio</p>
+<p>© 2026 AmitVisuals</p>
 
 </footer>
 
