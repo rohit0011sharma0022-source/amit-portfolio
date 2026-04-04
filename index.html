@@ -326,26 +326,100 @@ transition:0.3s;
 }
 .gallery-grid img:hover{transform:scale(1.05);}
 
-/* OFFER */
-.offer-section{padding:60px 20px;}
+/* ULTRA PREMIUM OFFER */
+
 .offer-container{
 display:flex;
 flex-direction:column;
-gap:20px;
+gap:35px;
 max-width:900px;
 margin:auto;
+perspective:1000px;
 }
+
+/* CARD */
+
 .offer-card{
-background:rgba(255,255,255,0.03);
-padding:25px;
-border-radius:20px;
+background:rgba(255,255,255,0.04);
+border-radius:30px;
+padding:35px 25px;
+position:relative;
+overflow:hidden;
+transition:0.4s;
+transform-style:preserve-3d;
+backdrop-filter:blur(25px);
 border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-transition:0.3s;
 }
-.offer-card:hover{transform:translateY(-5px);}
-.offer-card h3{color:#3b82f6;margin-bottom:10px;}
-.offer-card p{color:#9ca3af;}
+
+/* GRADIENT BORDER GLOW */
+
+.offer-card::before{
+content:'';
+position:absolute;
+inset:0;
+border-radius:30px;
+padding:1px;
+background:linear-gradient(120deg,#2563eb,#06b6d4,#2563eb);
+-webkit-mask:
+linear-gradient(#000 0 0) content-box,
+linear-gradient(#000 0 0);
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+animation:borderMove 4s linear infinite;
+}
+
+@keyframes borderMove{
+0%{background-position:0%}
+100%{background-position:200%}
+}
+
+/* FLOATING LIGHT */
+
+.offer-card::after{
+content:'';
+position:absolute;
+width:250px;
+height:250px;
+background:radial-gradient(circle, rgba(37,99,235,0.25), transparent);
+top:-80px;
+right:-80px;
+filter:blur(70px);
+}
+
+/* ICON */
+
+.offer-icon{
+width:70px;
+height:70px;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+margin-bottom:20px;
+box-shadow:0 10px 30px rgba(37,99,235,0.6);
+}
+
+/* TEXT */
+
+.offer-card h2{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.offer-card p{
+color:#9ca3af;
+line-height:1.7;
+}
+
+/* HOVER 3D */
+
+.offer-card:hover{
+transform:rotateX(6deg) rotateY(-6deg) scale(1.02);
+box-shadow:0 30px 60px rgba(0,0,0,0.6);
+}
+
 
 /* PREMIUM SKILLS */
 
@@ -561,12 +635,53 @@ AVAILABLE FOR PROJECTS
 
 <!-- OFFER -->
 <section class="offer-section" id="offer">
+
 <h1 class="section-title">What I Offer</h1>
+
+<p class="offer-subtitle">
+Comprehensive creative services that combine technical expertise with artistic vision to deliver exceptional results.
+</p>
+
 <div class="offer-container">
-<div class="offer-card"><h3>Video Editing</h3><p>Professional edits...</p></div>
-<div class="offer-card"><h3>Content Strategy</h3><p>Growth-focused content...</p></div>
-<div class="offer-card"><h3>Graphic Design</h3><p>Social media visuals...</p></div>
+
+<div class="offer-card">
+<div class="offer-icon">🎬</div>
+<h2>Video Editing</h2>
+<p>Seamless editing for short and long content tailored for YouTube, Reels, and other platforms.</p>
 </div>
+
+<div class="offer-card">
+<div class="offer-icon">📖</div>
+<h2>Storytelling</h2>
+<p>Weaving raw visuals into timeless stories that resonate and inspire.</p>
+</div>
+
+<div class="offer-card">
+<div class="offer-icon">📝</div>
+<h2>Scripting</h2>
+<p>Strategic scripting that transforms visions into cinematic experiences.</p>
+</div>
+
+<div class="offer-card">
+<div class="offer-icon">🎨</div>
+<h2>Graphics Designing</h2>
+<p>Stunning visual designs including thumbnails, posters, and banners to elevate your brand.</p>
+</div>
+
+<div class="offer-card">
+<div class="offer-icon">💻</div>
+<h2>Motion Graphic</h2>
+<p>Motion graphics that captivate, communicate, and elevate every narrative.</p>
+</div>
+
+<div class="offer-card">
+<div class="offer-icon">📺</div>
+<h2>SMM</h2>
+<p>Social media strategies that engage, inspire, and convert.</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- SKILLS -->
@@ -694,6 +809,44 @@ bar.style.width = bar.getAttribute("data-width");
 
 skillBars.forEach(bar => {
 observer.observe(bar);
+});
+  /* SCROLL REVEAL */
+
+const cards = document.querySelectorAll(".offer-card");
+
+const observer2 = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity = 1;
+entry.target.style.transform = "translateY(0)";
+}
+});
+},{threshold:0.2});
+
+cards.forEach(card=>{
+card.style.opacity = 0;
+card.style.transform = "translateY(40px)";
+observer2.observe(card);
+});
+
+
+/* 3D MOUSE TILT */
+
+cards.forEach(card=>{
+card.addEventListener("mousemove", e=>{
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+const rotateX = ((y / rect.height) - 0.5) * 10;
+const rotateY = ((x / rect.width) - 0.5) * -10;
+
+card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+});
+
+card.addEventListener("mouseleave", ()=>{
+card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+});
 });
 </script>
 
