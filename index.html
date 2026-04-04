@@ -8,9 +8,52 @@
 
 <title>Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#020617;
+width:100%;
+}
+
+.logo{
+font-size:28px;
+color:#3b82f6;
+}
+
+.menu{
+font-size:28px;
+cursor:pointer;
+display:none;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+}
+
+/* HERO */
+
 .hero{
 height:100vh;
 display:flex;
@@ -19,10 +62,11 @@ justify-content:flex-start;
 padding-left:10%;
 padding-top:120px;
 text-align:left;
+position:relative;
 }
 
 .hero-text{
-max-width:600px;
+max-width:800px;
 }
 
 .hero-text h4{
@@ -38,9 +82,11 @@ margin-bottom:20px;
 }
 
 .hero-text h2{
-font-size:30px;
-font-weight:500;
+font-size:22px;
+font-weight:400;
 margin-bottom:20px;
+white-space:nowrap;
+letter-spacing:0.5px;
 }
 
 .hero-text p{
@@ -77,7 +123,14 @@ right:300px;
 bottom:100px;
 }
 
-/* mobile */
+/* SECTIONS */
+
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -91,77 +144,10 @@ padding:120px 30px;
 font-size:50px;
 }
 
+.hero-text h2{
+white-space:normal;
+font-size:20px;
 }
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
-
-body{
-background:#020617;
-color:white;
-}
-
-/* NAVBAR */
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-background:#020617;
-position:relative;
-width:100%;
-}
-
-.logo{
-font-size:28px;
-color:#3b82f6;
-}
-
-.menu{
-font-size:28px;
-cursor:pointer;
-display:none;
-}
-
-nav a{
-margin:0 15px;
-text-decoration:none;
-color:white;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:flex-start;
-padding-left:10%;
-text-align:left;
-}
-
-.hero h1{
-font-size:50px;
-}
-
-.hero span{
-color:#3b82f6;
-}
-
-/* SECTIONS */
-
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
 
 nav{
 display:none;
@@ -224,7 +210,7 @@ display:block;
 <h2>Professional Video Editor and Multimedia Content Strategist</h2>
 
 <p>
-From raw footage to refined narratives elevating brands with professional video editing and content strategy.
+From raw footage to refined narratives — elevating brands with professional video editing and content strategy.
 </p>
 
 </div>
@@ -240,21 +226,23 @@ From raw footage to refined narratives elevating brands with professional video 
 
 <h2>Skills & Tools</h2>
 
-<p>Mastery of industry-standard tools and cutting-edge technologies for creating exceptional digital experiences.
+<p>Mastery of industry-standard tools and cutting-edge technologies for creating exceptional digital experiences.</p>
+
+<p>
+• CapCut • Photoshop • Premiere Pro • After Effects
 </p>
-  <p> • CapCut
-      • Photoshop
-      • Premiere Pro
-      • After Effects
-    </p>
 
 </section>
+
 
 <section id="work">
 
 <h2>Recent Work</h2>
 
 <p>Showcasing my latest video editing projects that demonstrate creativity, technical expertise, and compelling storytelling.</p>
+
+</section>
+
 
 <section id="projects">
 
@@ -269,7 +257,7 @@ From raw footage to refined narratives elevating brands with professional video 
 
 <h2>Contact</h2>
 
-<p>Instagram: @amitvisuals</p>
+<p>Instagram: @harshvisuals</p>
 
 </section>
 
