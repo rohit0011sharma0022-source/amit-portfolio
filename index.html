@@ -234,6 +234,72 @@ color:#9ca3af;
 font-size:14px;
 }
 
+/* WORK SECTION */
+
+.work-section{
+padding:60px 20px;
+text-align:center;
+}
+
+.work-title{
+font-size:40px;
+color:#3b82f6;
+margin-bottom:10px;
+}
+
+.work-subtitle{
+color:#9ca3af;
+max-width:600px;
+margin:0 auto 40px;
+line-height:1.6;
+}
+
+.work-container{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.work-card{
+position:relative;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:25px;
+padding:40px 20px;
+backdrop-filter:blur(20px);
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+text-align:left;
+transition:0.3s;
+}
+
+.work-card:hover{
+transform:translateY(-5px) scale(1.01);
+}
+
+.play-btn{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+width:80px;
+height:80px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+border:2px solid white;
+opacity:0.8;
+}
+
+.work-card h3{
+margin-top:80px;
+font-size:18px;
+letter-spacing:1px;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -274,6 +340,10 @@ margin:10px 0;
 }
 
 .menu{display:block;}
+
+.work-title{
+font-size:32px;
+}
 
 }
 
@@ -338,12 +408,12 @@ AVAILABLE FOR PROJECTS
 </div>
 
 <div>
-<h2>30+</h2>
+<h2>15+</h2>
 <p>Clients</p>
 </div>
 
 <div>
-<h2>3+</h2>
+<h2>1+</h2>
 <p>Years</p>
 </div>
 
@@ -358,14 +428,44 @@ AVAILABLE FOR PROJECTS
 
 </section>
 
+<!-- RECENT WORK -->
+
+<section class="work-section">
+
+<h1 class="work-title">Recent Work</h1>
+
+<p class="work-subtitle">
+Showcasing my latest video editing projects that demonstrate creativity,
+technical expertise, and compelling storytelling.
+</p>
+
+<div class="work-container">
+
+<div class="work-card">
+<div class="play-btn">▶</div>
+<h3>SAMPLE 1</h3>
+</div>
+
+<div class="work-card">
+<div class="play-btn">▶</div>
+<h3>SAMPLE 2</h3>
+</div>
+
+<div class="work-card">
+<div class="play-btn">▶</div>
+<h3>SAMPLE 3</h3>
+</div>
+
+</div>
+
+</section>
+
 <script>
 
-/* MENU */
 function toggleMenu(){
 document.getElementById("nav").classList.toggle("active");
 }
 
-/* COUNTER ANIMATION */
 const counters = document.querySelectorAll(".stats-grid h2");
 
 counters.forEach(counter => {
