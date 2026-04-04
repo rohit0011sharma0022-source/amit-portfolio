@@ -12,12 +12,15 @@
 <style>
 
 /* RESET */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins', sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -27,7 +30,6 @@ overflow-x:hidden;
 }
 
 /* BACKGROUND GLOW */
-
 body::before{
 content:'';
 position:fixed;
@@ -41,7 +43,6 @@ z-index:-1;
 }
 
 /* NAVBAR */
-
 header{
 display:flex;
 justify-content:space-between;
@@ -67,7 +68,6 @@ color:white;
 }
 
 /* HERO */
-
 .hero{
 min-height:75vh;
 display:flex;
@@ -107,7 +107,6 @@ line-height:1.6;
 }
 
 /* ANIMATION */
-
 .fade-up{
 opacity:0;
 transform:translateY(30px);
@@ -123,7 +122,6 @@ to{opacity:1; transform:translateY(0);}
 }
 
 /* CIRCLES */
-
 .circle{
 position:absolute;
 border-radius:50%;
@@ -135,7 +133,6 @@ background:rgba(59,130,246,0.15);
 .circle3{width:120px;height:120px;right:300px;bottom:100px;}
 
 /* CTA SECTION */
-
 .cta-section{
 max-width:900px;
 margin:-40px auto 0;
@@ -163,7 +160,6 @@ overflow:hidden;
 }
 
 /* PRIMARY BUTTON */
-
 .btn.primary{
 background:linear-gradient(90deg,#2563eb,#06b6d4);
 color:white;
@@ -177,7 +173,6 @@ box-shadow:0 0 40px rgba(37,99,235,0.9);
 }
 
 /* SECONDARY BUTTON */
-
 .btn.secondary{
 background:#111827;
 border:1px solid rgba(255,255,255,0.1);
@@ -185,7 +180,6 @@ color:white;
 }
 
 /* STATS CARD */
-
 .stats-card{
 background:rgba(255,255,255,0.03);
 border-radius:20px;
@@ -235,7 +229,6 @@ font-size:14px;
 }
 
 /* WORK SECTION */
-
 .work-section{
 padding:60px 20px;
 text-align:center;
@@ -300,28 +293,99 @@ font-size:18px;
 letter-spacing:1px;
 }
 
+/* NEW SECTIONS */
+
+.section-title{
+text-align:center;
+font-size:38px;
+color:#3b82f6;
+margin-bottom:30px;
+}
+
+/* GALLERY */
+.gallery-section{padding:60px 20px;}
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+max-width:900px;
+margin:auto;
+}
+.gallery-grid img{
+width:100%;
+border-radius:15px;
+transition:0.3s;
+}
+.gallery-grid img:hover{transform:scale(1.05);}
+
+/* OFFER */
+.offer-section{padding:60px 20px;}
+.offer-container{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+.offer-card{
+background:rgba(255,255,255,0.03);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+transition:0.3s;
+}
+.offer-card:hover{transform:translateY(-5px);}
+.offer-card h3{color:#3b82f6;margin-bottom:10px;}
+.offer-card p{color:#9ca3af;}
+
+/* SKILLS */
+.skills-section{padding:60px 20px;}
+.skills-container{
+max-width:800px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+.bar{
+width:100%;
+height:8px;
+background:#111827;
+border-radius:10px;
+overflow:hidden;
+}
+.bar span{
+display:block;
+height:100%;
+background:linear-gradient(90deg,#2563eb,#06b6d4);
+}
+
+/* TOOLS */
+.tools-section{padding:60px 20px;text-align:center;}
+.tools-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+max-width:700px;
+margin:auto;
+}
+.tool{
+padding:12px 20px;
+background:#111827;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
+}
+.tool:hover{background:#2563eb;}
+
 /* MOBILE */
-
 @media(max-width:768px){
-
-.hero{
-padding:100px 30px 20px;
-min-height:auto;
-}
-
-.hero-text h1{
-font-size:50px;
-}
-
-.hero-text h2{
-white-space:normal;
-font-size:20px;
-}
-
-.cta-section{
-margin:-20px auto 0;
-}
-
+.hero{padding:100px 30px 20px;min-height:auto;}
+.hero-text h1{font-size:50px;}
+.hero-text h2{white-space:normal;font-size:20px;}
+.cta-section{margin:-20px auto 0;}
 nav{
 display:none;
 position:absolute;
@@ -331,24 +395,13 @@ background:#111827;
 padding:20px;
 border-radius:10px;
 }
-
 nav.active{display:block;}
-
-nav a{
-display:block;
-margin:10px 0;
-}
-
+nav a{display:block;margin:10px 0;}
 .menu{display:block;}
-
-.work-title{
-font-size:32px;
-}
-
+.work-title{font-size:32px;}
 }
 
 </style>
-
 </head>
 
 <body>
@@ -358,17 +411,18 @@ font-size:32px;
 <div class="menu" onclick="toggleMenu()">☰</div>
 
 <nav id="nav">
-<a href="#">Home</a>
-<a href="#">Work</a>
-<a href="#">Skills</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#work">Work</a>
+<a href="#gallery">Designs</a>
+<a href="#offer">Services</a>
+<a href="#skills">Skills</a>
+<a href="#tools">Tools</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
 <!-- HERO -->
-
-<section class="hero">
-
+<section class="hero" id="home">
 <div class="hero-text">
 <h4 class="fade-up">Hey, I'm</h4>
 <h1 class="fade-up delay-1">Amit</h1>
@@ -381,116 +435,107 @@ From raw footage to refined narratives — elevating brands with professional vi
 <div class="circle circle1"></div>
 <div class="circle circle2"></div>
 <div class="circle circle3"></div>
-
 </section>
 
 <!-- CTA -->
-
-<section class="cta-section">
-
+<section class="cta-section" id="contact">
 <div class="cta-buttons">
 <a href="#" class="btn primary">✉ Get In Touch</a>
-<a href="#" class="btn secondary">▶ View My Work</a>
+<a href="#work" class="btn secondary">▶ View My Work</a>
 </div>
 
 <div class="stats-card">
-
 <div class="status">
 <span class="dot"></span>
 AVAILABLE FOR PROJECTS
 </div>
 
 <div class="stats-grid">
-
-<div>
-<h2>6</h2>
-<p>Companies I've worked for</p>
+<div><h2>6</h2><p>Companies I've worked for</p></div>
+<div><h2>15+</h2><p>Clients</p></div>
+<div><h2>1+</h2><p>Years</p></div>
+<div><h2>100%</h2><p>Satisfaction</p></div>
 </div>
-
-<div>
-<h2>15+</h2>
-<p>Clients</p>
 </div>
-
-<div>
-<h2>1+</h2>
-<p>Years</p>
-</div>
-
-<div>
-<h2>100%</h2>
-<p>Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- RECENT WORK -->
-
-<section class="work-section">
-
+<!-- WORK -->
+<section class="work-section" id="work">
 <h1 class="work-title">Recent Work</h1>
-
-<p class="work-subtitle">
-Showcasing my latest video editing projects that demonstrate creativity,
-technical expertise, and compelling storytelling.
-</p>
+<p class="work-subtitle">Showcasing my latest video editing projects...</p>
 
 <div class="work-container">
-
-<div class="work-card">
-<div class="play-btn">▶</div>
-<h3>SAMPLE 1</h3>
+<div class="work-card"><div class="play-btn">▶</div><h3>SAMPLE 1</h3></div>
+<div class="work-card"><div class="play-btn">▶</div><h3>SAMPLE 2</h3></div>
+<div class="work-card"><div class="play-btn">▶</div><h3>SAMPLE 3</h3></div>
 </div>
+</section>
 
-<div class="work-card">
-<div class="play-btn">▶</div>
-<h3>SAMPLE 2</h3>
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+<h1 class="section-title">Graphic Designs</h1>
+<div class="gallery-grid">
+<img src="your-image1.jpg">
+<img src="your-image2.jpg">
+<img src="your-image3.jpg">
+<img src="your-image4.jpg">
 </div>
+</section>
 
-<div class="work-card">
-<div class="play-btn">▶</div>
-<h3>SAMPLE 3</h3>
+<!-- OFFER -->
+<section class="offer-section" id="offer">
+<h1 class="section-title">What I Offer</h1>
+<div class="offer-container">
+<div class="offer-card"><h3>Video Editing</h3><p>Professional edits...</p></div>
+<div class="offer-card"><h3>Content Strategy</h3><p>Growth-focused content...</p></div>
+<div class="offer-card"><h3>Graphic Design</h3><p>Social media visuals...</p></div>
 </div>
+</section>
 
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+<h1 class="section-title">Skills</h1>
+<div class="skills-container">
+<div class="skill"><p>Video Editing</p><div class="bar"><span style="width:90%"></span></div></div>
+<div class="skill"><p>Motion Graphics</p><div class="bar"><span style="width:75%"></span></div></div>
+<div class="skill"><p>Graphic Design</p><div class="bar"><span style="width:85%"></span></div></div>
 </div>
+</section>
 
+<!-- TOOLS -->
+<section class="tools-section" id="tools">
+<h1 class="section-title">Tools I Use</h1>
+<div class="tools-container">
+<div class="tool">Premiere Pro</div>
+<div class="tool">After Effects</div>
+<div class="tool">Photoshop</div>
+<div class="tool">CapCut</div>
+</div>
 </section>
 
 <script>
-
 function toggleMenu(){
 document.getElementById("nav").classList.toggle("active");
 }
 
 const counters = document.querySelectorAll(".stats-grid h2");
-
-counters.forEach(counter => {
-let target = counter.innerText;
-let isPlus = target.includes("+");
-let isPercent = target.includes("%");
-
-target = parseInt(target);
-let count = 0;
-
+counters.forEach(counter=>{
+let target=counter.innerText;
+let isPlus=target.includes("+");
+let isPercent=target.includes("%");
+target=parseInt(target);
+let count=0;
 function update(){
-let increment = target / 50;
-count += increment;
-
-if(count < target){
-counter.innerText = Math.floor(count);
+let increment=target/50;
+count+=increment;
+if(count<target){
+counter.innerText=Math.floor(count);
 requestAnimationFrame(update);
 }else{
-counter.innerText = target + (isPlus?"+":"") + (isPercent?"%":"");
-}
-}
-
+counter.innerText=target+(isPlus?"+":"")+(isPercent?"%":"");
+}}
 update();
 });
-
 </script>
 
 </body>
