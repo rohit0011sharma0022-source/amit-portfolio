@@ -662,6 +662,64 @@ section:not(:first-child){
   transform:translate(-50%,-50%);
   filter:blur(100px);
   z-index:-1;
+} 
+  /* CONTACT SECTION */
+
+.contact-section{
+  text-align:center;
+  padding:100px 20px;
+  position:relative;
+}
+
+/* subtitle */
+.contact-subtitle{
+  max-width:600px;
+  margin:0 auto 30px;
+  color:#9ca3af;
+  line-height:1.6;
+}
+
+/* buttons container */
+.contact-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  align-items:center;
+}
+
+/* button style */
+.contact-btn{
+  display:inline-block;
+  padding:16px 30px;
+  border-radius:50px;
+  background:#111827;
+  border:1px solid rgba(255,255,255,0.1);
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+  width:220px;
+}
+
+/* hover effect */
+.contact-btn:hover{
+  background:linear-gradient(90deg,#2563eb,#06b6d4);
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 0 30px rgba(37,99,235,0.7);
+}
+
+/* glow background */
+.contact-section::before{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle, rgba(37,99,235,0.2), transparent);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  filter:blur(100px);
+  z-index:-1;
 }
 </style>
 </head>
@@ -700,7 +758,7 @@ From raw footage to refined narratives — elevating brands with professional vi
 <!-- CTA -->
 <section class="cta-section" id="contact">
 <div class="cta-buttons">
-<a href="#" class="btn primary">✉ Get In Touch</a>
+<a href="#contact" class="btn primary">✉ Get In Touch</a>
 <a href="#work" class="btn secondary">▶ View My Work</a>
 </div>
 
@@ -861,6 +919,21 @@ Mastery of industry-standard tools and cutting-edge technologies for creating ex
   </p>
 
   <a href="#contact" class="create-btn">🚀 Start a Project</a>
+
+</section>
+  <section class="contact-section" id="contact">
+
+  <h1 class="section-title">Contact Me</h1>
+
+  <p class="contact-subtitle">
+    Let’s create something amazing together. Whether it’s a video, brand, or idea — I’m just one message away.
+  </p>
+
+  <div class="contact-buttons">
+    <a href="mailto:youremail@example.com" class="contact-btn">📩 Email Me</a>
+    <a href="https://wa.me/91XXXXXXXXXX" class="contact-btn">💬 WhatsApp</a>
+    <a href="https://instagram.com/yourusername" target="_blank" class="contact-btn">📷 Instagram</a>
+  </div>
 
 </section>
 </section>
