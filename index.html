@@ -1,740 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins', sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#020617;
-color:white;
-overflow-x:hidden;
-}
-section{
-scroll-margin-top:100px;
-}
-  
-/* BACKGROUND GLOW */
-body::before{
-content:'';
-position:fixed;
-width:400px;
-height:400px;
-background:radial-gradient(circle, rgba(37,99,235,0.25), transparent);
-top:20%;
-left:60%;
-filter:blur(100px);
-z-index:-1;
-}
-
-/* NAVBAR */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-}
-
-.logo{
-font-size:28px;
-color:#3b82f6;
-}
-
-.menu{
-font-size:28px;
-cursor:pointer;
-display:none;
-}
-
-nav a{
-margin:0 15px;
-text-decoration:none;
-color:white;
-}
-section{
-scroll-margin-top:80px;
-}
-  
-/* HERO */
-.hero{
-min-height:90vh;
-display:flex;
-align-items:center;
-padding:120px 10% 40px;
-position:relative;
-}
-
-.hero-text{
-max-width:700px;
-}
-
-.hero-text h4{
-color:#c084fc;
-font-size:22px;
-margin-bottom:10px;
-}
-
-.hero-text h1{
-font-size:70px;
-color:#3b82f6;
-margin-bottom:12px;
-}
-
-.hero-text h2{
-font-size:22px;
-font-weight:400;
-margin-bottom:12px;
-white-space:nowrap;
-letter-spacing:0.5px;
-}
-
-.hero-text p{
-color:#9ca3af;
-margin-bottom:15px;
-line-height:1.6;
-}
-
-/* ANIMATION */
-.fade-up{
-opacity:0;
-transform:translateY(30px);
-animation:fadeUp 0.8s ease forwards;
-}
-
-.fade-up.delay-1{animation-delay:0.2s;}
-.fade-up.delay-2{animation-delay:0.4s;}
-.fade-up.delay-3{animation-delay:0.6s;}
-
-@keyframes fadeUp{
-to{opacity:1; transform:translateY(0);}
-}
-
-/* CIRCLES */
-.circle{
-position:absolute;
-border-radius:50%;
-background:rgba(59,130,246,0.15);
-}
-
-.circle1{width:300px;height:300px;right:100px;top:120px;}
-.circle2{width:200px;height:200px;right:50px;top:350px;}
-.circle3{width:120px;height:120px;right:300px;bottom:100px;}
-.hero,
-.circle{
-pointer-events:none;
-}
-/* CTA SECTION */
-.cta-section{
-max-width:900px;
-padding:0 20px 40px;
-}
-
-.cta-buttons{
-display:flex;
-flex-direction:column;
-gap:16px;
-margin-top:10px;
-}
-
-.btn{
-display:flex;
-justify-content:center;
-align-items:center;
-padding:18px;
-border-radius:50px;
-text-decoration:none;
-font-size:18px;
-font-weight:500;
-position:relative;
-overflow:hidden;
-}
-
-/* PRIMARY BUTTON */
-.btn.primary{
-background:linear-gradient(90deg,#2563eb,#06b6d4);
-color:white;
-box-shadow:0 0 20px rgba(37,99,235,0.6);
-transition:0.3s;
-}
-
-.btn.primary:hover{
-transform:translateY(-3px) scale(1.02);
-box-shadow:0 0 40px rgba(37,99,235,0.9);
-}
-
-/* SECONDARY BUTTON */
-.btn.secondary{
-background:#111827;
-border:1px solid rgba(255,255,255,0.1);
-color:white;
-}
-
-/* STATS CARD */
-.stats-card{
-background:rgba(255,255,255,0.03);
-border-radius:20px;
-padding:25px;
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
-margin-top:30px;
-transition:0.3s;
-}
-
-.stats-card:hover{
-transform:translateY(-5px);
-}
-
-.status{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:20px;
-color:#9ca3af;
-font-size:14px;
-}
-
-.dot{
-width:10px;
-height:10px;
-background:#22c55e;
-border-radius:50%;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-text-align:center;
-}
-
-.stats-grid h2{
-color:#3b82f6;
-font-size:32px;
-}
-
-.stats-grid p{
-color:#9ca3af;
-font-size:14px;
-}
-
-/* WORK SECTION */
-.work-section{
-padding:60px 20px;
-text-align:center;
-}
-
-.work-title{
-font-size:40px;
-color:#3b82f6;
-margin-bottom:10px;
-}
-
-.work-subtitle{
-color:#9ca3af;
-max-width:600px;
-margin:0 auto 40px;
-line-height:1.6;
-}
-
-.work-container{
-display:flex;
-flex-direction:column;
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.work-card{
-position:relative;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:25px;
-padding:40px 20px;
-backdrop-filter:blur(20px);
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
-text-align:left;
-transition:0.3s;
-}
-
-.work-card:hover{
-transform:translateY(-5px) scale(1.01);
-}
-
-.play-btn{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:40px;
-width:80px;
-height:80px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-border:2px solid white;
-opacity:0.8;
-}
-
-.work-card h3{
-margin-top:80px;
-font-size:18px;
-letter-spacing:1px;
-}
-
-/* NEW SECTIONS */
-
-.section-title{
-text-align:center;
-font-size:38px;
-color:#3b82f6;
-margin-bottom:30px;
-}
-  section{
-padding:100px 20px;
-}
-
-@media(max-width:768px){
-section{
-padding:70px 20px;
-}
-}section:not(:first-child){
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-/* GALLERY */
-.gallery-section{padding:60px 20px;}
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-max-width:900px;
-margin:auto;
-}
-.gallery-grid img{
-width:100%;
-border-radius:15px;
-transition:0.3s;
-}
-.gallery-grid img:hover{transform:scale(1.05);}
-
-/* ULTRA PREMIUM OFFER */
-
-.offer-container{
-display:flex;
-flex-direction:column;
-gap:35px;
-max-width:900px;
-margin:auto;
-perspective:1000px;
-}
-
-/* CARD */
-
-.offer-card{
-background:rgba(255,255,255,0.04);
-border-radius:30px;
-padding:35px 25px;
-position:relative;
-overflow:hidden;
-transition:0.4s;
-transform-style:preserve-3d;
-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,0.08);
-}
-
-/* GRADIENT BORDER GLOW */
-
-.offer-card::before{
-content:'';
-position:absolute;
-inset:0;
-border-radius:30px;
-padding:1px;
-background:linear-gradient(120deg,#2563eb,#06b6d4,#2563eb);
--webkit-mask:
-linear-gradient(#000 0 0) content-box,
-linear-gradient(#000 0 0);
--webkit-mask-composite:xor;
-mask-composite:exclude;
-animation:borderMove 4s linear infinite;
-}
-
-@keyframes borderMove{
-0%{background-position:0%}
-100%{background-position:200%}
-}
-
-/* FLOATING LIGHT */
-.offer-card{
-overflow:hidden;
-}
-
-.offer-card::after{
-content:'';
-position:absolute;
-width:180px;
-height:180px;
-background:radial-gradient(circle, rgba(37,99,235,0.18), transparent);
-top:-40px;
-right:-40px;
-filter:blur(60px);
-}
-
-
-/* ICON */
-
-.offer-icon{
-width:70px;
-height:70px;
-border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-background:linear-gradient(135deg,#2563eb,#06b6d4);
-margin-bottom:20px;
-box-shadow:0 10px 30px rgba(37,99,235,0.6);
-}
-
-/* TEXT */
-
-.offer-card h2{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.offer-card p{
-color:#9ca3af;
-line-height:1.7;
-}
-
-/* HOVER 3D */
-
-.offer-card:hover{
-transform:rotateX(6deg) rotateY(-6deg) scale(1.02);
-box-shadow:0 30px 60px rgba(0,0,0,0.6);
-}
-
-.offer-section{
-padding:100px 20px 80px;
-position:relative;
-z-index:1;
-}
-
-
-/* PREMIUM SKILLS */
-
-.skills-subtitle{
-text-align:center;
-color:#9ca3af;
-max-width:600px;
-margin:0 auto 40px;
-line-height:1.6;
-}
-
-.skills-box{
-max-width:900px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:25px;
-}
-
-/* CARD */
-
-.skill-card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:25px;
-padding:25px;
-backdrop-filter:blur(25px);
-box-shadow:0 10px 40px rgba(0,0,0,0.5);
-transition:0.4s;
-position:relative;
-overflow:hidden;
-}
-
-.skill-card:hover{
-transform:translateY(-8px) scale(1.01);
-box-shadow:0 0 30px rgba(37,99,235,0.4);
-}
-
-/* GLOW EFFECT */
-
-.skill-card::before{
-content:'';
-position:absolute;
-width:200px;
-height:200px;
-background:radial-gradient(circle, rgba(37,99,235,0.2), transparent);
-top:-50px;
-right:-50px;
-filter:blur(60px);
-}
-
-/* TOP ROW */
-
-.skill-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:15px;
-}
-
-.skill-left{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.skill-left img{
-width:28px;
-height:28px;
-}
-
-.percent{
-color:#9ca3af;
-}
-
-/* BAR */
-
-.bar{
-width:100%;
-height:8px;
-background:#111827;
-border-radius:10px;
-overflow:hidden;
-}
-
-.bar span{
-display:block;
-height:100%;
-width:0;
-background:linear-gradient(90deg,#2563eb,#06b6d4);
-border-radius:10px;
-transition:1.5s ease;
-}
-
-/* TOOLS */
-.tools-section{padding:60px 20px;text-align:center;}
-.tools-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-max-width:700px;
-margin:auto;
-}
-.tool{
-padding:12px 20px;
-background:#111827;
-border-radius:30px;
-border:1px solid rgba(255,255,255,0.1);
-transition:0.3s;
-}
-.tool:hover{background:#2563eb;}
-
-/* MOBILE */
-@media(max-width:768px){
-.hero{padding:100px 30px 20px;min-height:auto;}
-.hero-text h1{font-size:50px;}
-.hero-text h2{white-space:normal;font-size:20px;}
-.cta-section{margin:-20px auto 0;}
-nav{
-display:none;
-position:absolute;
-top:70px;
-right:20px;
-background:#111827;
-padding:20px;
-border-radius:10px;
-}
-nav.active{display:block;}
-nav a{display:block;margin:10px 0;}
-.menu{display:block;}
-.work-title{font-size:32px;}
-}@media(max-width:768px){
-.offer-card:hover{
-transform:none;
-}
-}
-  .skills-section{
-padding-top:80px;
-}
-.container{
-max-width:900px;
-margin:auto;
-}
-  
-/* Fix spacing for "What I Offer" section */
-
-  .offer-section {
-  padding-bottom: 60px;
-}
-
-.offer-subtitle {
-  margin-bottom: 20px;
-}
-
-.offer-container {
-  margin-top: 20px;
-}
-  .offer-section {
-  padding-top: 80px;
-  padding-bottom: 60px;
-} 
-  .offer-subtitle {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #9ca3af;
-  line-height: 1.6;
-}
-  .section-title {
-  margin-bottom: 12px;
-}
-
-.offer-subtitle {
-  margin-top: 0;
-}
-section:not(:first-child){
-  border-top: none;
-}
-  .create-section{
-  text-align:center;
-  padding:100px 20px;
-  position:relative;
-}
-
-/* Subtitle */
-.create-subtitle{
-  max-width:600px;
-  margin:0 auto 30px;
-  color:#9ca3af;
-  line-height:1.6;
-}
-
-/* Button */
-.create-btn{
-  display:inline-block;
-  padding:16px 35px;
-  border-radius:50px;
-  background:linear-gradient(90deg,#2563eb,#06b6d4);
-  color:white;
-  text-decoration:none;
-  font-weight:500;
-  box-shadow:0 0 25px rgba(37,99,235,0.6);
-  transition:0.3s;
-}
-
-.create-btn:hover{
-  transform:translateY(-3px) scale(1.05);
-  box-shadow:0 0 50px rgba(37,99,235,0.9);
-}
-  .create-section::before{
-  content:'';
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:radial-gradient(circle, rgba(37,99,235,0.2), transparent);
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  filter:blur(100px);
-  z-index:-1;
-} 
-  /* CONTACT SECTION */
-
-.contact-section{
-  text-align:center;
-  padding:100px 20px;
-  position:relative;
-}
-
-/* subtitle */
-.contact-subtitle{
-  max-width:600px;
-  margin:0 auto 30px;
-  color:#9ca3af;
-  line-height:1.6;
-}
-
-/* buttons container */
-.contact-buttons{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  align-items:center;
-}
-
-/* button style */
-.contact-btn{
-  display:inline-block;
-  padding:16px 30px;
-  border-radius:50px;
-  background:#111827;
-  border:1px solid rgba(255,255,255,0.1);
-  color:white;
-  text-decoration:none;
-  font-weight:500;
-  transition:0.3s;
-  width:220px;
-}
-
-/* hover effect */
-.contact-btn:hover{
-  background:linear-gradient(90deg,#2563eb,#06b6d4);
-  transform:translateY(-3px) scale(1.05);
-  box-shadow:0 0 30px rgba(37,99,235,0.7);
-}
-
-/* glow background */
-.contact-section::before{
-  content:'';
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:radial-gradient(circle, rgba(37,99,235,0.2), transparent);
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  filter:blur(100px);
-  z-index:-1;
-}
-</style>
-</head>
-
 <body>
 
+<style>
+.work-card{display:block;text-decoration:none;color:white;padding:40px 20px 30px;}
+.play-btn{top:40px;transform:translateX(-50%);font-size:30px;}
+.work-card h3{margin-top:110px;}
+.work-card p{margin-top:6px;color:#9ca3af;font-size:14px;line-height:1.6;}
+.process-container{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:auto;}
+.process-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:25px;padding:28px 22px;}
+.process-card h3{font-size:20px;margin-bottom:8px;color:#3b82f6;}
+.process-card p{color:#9ca3af;line-height:1.6;font-size:15px;}
+.tool{display:flex;align-items:center;gap:10px;}
+.tool img{width:24px;height:24px;}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:50;padding:14px 20px;border-radius:50px;background:#22c55e;color:#052e16;font-weight:500;text-decoration:none;box-shadow:0 8px 25px rgba(34,197,94,0.4);}
+@media(max-width:768px){.process-container{grid-template-columns:1fr;}}
+</style>
+
 <header>
-<h2 class="logo">Portfolio</h2>
+<h2 class="logo">Amit</h2>
 <div class="menu" onclick="toggleMenu()">☰</div>
 
 <nav id="nav">
 <a href="#home" onclick="closeMenu()">Home</a>
 <a href="#work" onclick="closeMenu()">Work</a>
 <a href="#offer" onclick="closeMenu()">Services</a>
-<a href="#skills" onclick="closeMenu()">Skills</a>
+<a href="#process" onclick="closeMenu()">Process</a>
+<a href="#skills" onclick="closeMenu()">Tools</a>
 <a href="#contact" onclick="closeMenu()">Contact</a>
 </nav>
 </header>
@@ -744,9 +34,9 @@ section:not(:first-child){
 <div class="hero-text">
 <h4 class="fade-up">Hey, I'm</h4>
 <h1 class="fade-up delay-1">Amit</h1>
-<h2 class="fade-up delay-2">Professional Video Editor and Multimedia Content Strategist</h2>
+<h2 class="fade-up delay-2">Reels Editor for Creators and Brands</h2>
 <p class="fade-up delay-3">
-From raw footage to refined narratives — elevating brands with professional video editing and content strategy.
+I turn raw clips into reels people finish watching: strong hooks, clean cuts, captions and motion that fit your brand.
 </p>
 </div>
 
@@ -780,23 +70,28 @@ AVAILABLE FOR PROJECTS
 <!-- WORK -->
 <section class="work-section" id="work">
 <h1 class="work-title">Recent Work</h1>
-<p class="work-subtitle">Showcasing my latest video editing projects...</p>
+<p class="work-subtitle">Tap a card to watch the full video.</p>
 
 <div class="work-container">
-<div class="work-card"><div class="play-btn">▶</div><h3>SAMPLE 1</h3></div>
-<div class="work-card"><div class="play-btn">▶</div><h3>SAMPLE 2</h3></div>
-<div class="work-card"><div class="play-btn">▶</div><h3>SAMPLE 3</h3></div>
-</div>
-</section>
 
-<!-- GALLERY -->
-<section class="gallery-section" id="gallery">
-<h1 class="section-title">Graphic Designs</h1>
-<div class="gallery-grid">
-<img src="your-image1.jpg">
-<img src="your-image2.jpg">
-<img src="your-image3.jpg">
-<img src="your-image4.jpg">
+<a class="work-card" href="VIDEO_LINK_1" target="_blank" rel="noopener">
+<div class="play-btn">▶</div>
+<h3>WORK TITLE 1</h3>
+<p>What I did: hooks, captions, pacing.</p>
+</a>
+
+<a class="work-card" href="VIDEO_LINK_2" target="_blank" rel="noopener">
+<div class="play-btn">▶</div>
+<h3>WORK TITLE 2</h3>
+<p>What I did: hooks, captions, pacing.</p>
+</a>
+
+<a class="work-card" href="VIDEO_LINK_3" target="_blank" rel="noopener">
+<div class="play-btn">▶</div>
+<h3>WORK TITLE 3</h3>
+<p>What I did: hooks, captions, pacing.</p>
+</a>
+
 </div>
 </section>
 
@@ -806,137 +101,135 @@ AVAILABLE FOR PROJECTS
 <h1 class="section-title">What I Offer</h1>
 
 <p class="offer-subtitle">
-Comprehensive creative services that combine technical expertise with artistic vision to deliver exceptional results.
+Reels first, plus everything around them that helps your content perform.
 </p>
 
 <div class="offer-container">
 
 <div class="offer-card">
 <div class="offer-icon">🎬</div>
-<h2>Video Editing</h2>
-<p>Seamless editing for short and long content tailored for YouTube, Reels, and other platforms.</p>
-</div>
-
-<div class="offer-card">
-<div class="offer-icon">📖</div>
-<h2>Storytelling</h2>
-<p>Weaving raw visuals into timeless stories that resonate and inspire.</p>
-</div>
-
-<div class="offer-card">
-<div class="offer-icon">📝</div>
-<h2>Scripting</h2>
-<p>Strategic scripting that transforms visions into cinematic experiences.</p>
-</div>
-
-<div class="offer-card">
-<div class="offer-icon">🎨</div>
-<h2>Graphics Designing</h2>
-<p>Stunning visual designs including thumbnails, posters, and banners to elevate your brand.</p>
+<h2>Reels and Video Editing</h2>
+<p>Short and long edits for Instagram, YouTube and other platforms. Clean cuts, sound design and captions.</p>
 </div>
 
 <div class="offer-card">
 <div class="offer-icon">💻</div>
-<h2>Motion Graphic</h2>
-<p>Motion graphics that captivate, communicate, and elevate every narrative.</p>
+<h2>Motion Graphics</h2>
+<p>Animated text, transitions and graphics that keep viewers watching.</p>
+</div>
+
+<div class="offer-card">
+<div class="offer-icon">🎨</div>
+<h2>Thumbnails and Designs</h2>
+<p>Thumbnails, posters and banners that match your videos and brand.</p>
+</div>
+
+<div class="offer-card">
+<div class="offer-icon">📝</div>
+<h2>Scripting and Storytelling</h2>
+<p>Hooks and scripts that give your video a clear story from the first second.</p>
 </div>
 
 <div class="offer-card">
 <div class="offer-icon">📺</div>
-<h2>SMM</h2>
-<p>Social media strategies that engage, inspire, and convert.</p>
+<h2>Social Media Management</h2>
+<p>Content planning and posting support to keep your page consistent.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- SKILLS -->
+<!-- PROCESS -->
+<section id="process">
+
+<h1 class="section-title">How It Works</h1>
+
+<p class="skills-subtitle">Simple, fast and clear from start to finish.</p>
+
+<div class="process-container">
+
+<div class="process-card">
+<h3>1. Send footage</h3>
+<p>Share your clips and a short brief on the style you want.</p>
+</div>
+
+<div class="process-card">
+<h3>2. First draft</h3>
+<p>You get the first draft within 48 hours.</p>
+</div>
+
+<div class="process-card">
+<h3>3. Revisions</h3>
+<p>Tell me what to change and I update it until it is right.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TOOLS -->
 <section class="skills-section" id="skills">
 
-<h1 class="section-title">Skills & Tools</h1>
+<h1 class="section-title">Tools I Use</h1>
 
-<p class="skills-subtitle">
-Mastery of industry-standard tools and cutting-edge technologies for creating exceptional digital experiences.
-</p>
+<div class="tools-container">
 
-<div class="skills-box">
-
-<div class="skill-card">
-<div class="skill-top">
-<div class="skill-left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg">
-<h3>Premiere Pro</h3>
-</div>
-<span class="percent">100%</span>
-</div>
-<div class="bar"><span data-width="100%"></span></div>
+<div class="tool">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="">
+Premiere Pro
 </div>
 
-<div class="skill-card">
-<div class="skill-top">
-<div class="skill-left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg">
-<h3>After Effects</h3>
-</div>
-<span class="percent">100%</span>
-</div>
-<div class="bar"><span data-width="100%"></span></div>
+<div class="tool">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" alt="">
+After Effects
 </div>
 
-<div class="skill-card">
-<div class="skill-top">
-<div class="skill-left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg">
-<h3>Photoshop</h3>
-</div>
-<span class="percent">99%</span>
-</div>
-<div class="bar"><span data-width="99%"></span></div>
+<div class="tool">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="">
+Photoshop
 </div>
 
-<div class="skill-card">
-<div class="skill-top">
-<div class="skill-left">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg">
-<h3>DaVinci Resolve</h3>
-</div>
-<span class="percent">70%</span>
-</div>
-<div class="bar"><span data-width="70%"></span></div>
+<div class="tool">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="">
+DaVinci Resolve
 </div>
 
 </div>
 
 </section>
 
+<!-- CREATE -->
 <section class="create-section" id="create">
 
-  <h1 class="section-title">Let’s Create Something Amazing</h1>
+<h1 class="section-title">Let’s Create Something Amazing</h1>
 
-  <p class="create-subtitle">
-    Have an idea or project in mind? Let’s collaborate and bring your vision to life with stunning visuals and impactful storytelling.
-  </p>
+<p class="create-subtitle">
+Have a project in mind? Send me your footage and idea and I will reply with a plan.
+</p>
 
-  <a href="#contact" class="create-btn">🚀 Start a Project</a>
-
-</section>
-  <section class="contact-section" id="contact">
-
-  <h1 class="section-title">Contact Me</h1>
-
-  <p class="contact-subtitle">
-    Let’s create something amazing together. Whether it’s a video, brand, or idea — I’m just one message away.
-  </p>
-
-  <div class="contact-buttons">
-    <a href="mailto:ethicalamit@gmail.com" class="contact-btn">📩 Email Me</a>
-    <a href="https://wa.me/919501144434" class="contact-btn">💬 WhatsApp</a>
-  
-  </div>
-
+<a href="#contact" class="create-btn">🚀 Start a Project</a>
 
 </section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+
+<h1 class="section-title">Contact Me</h1>
+
+<p class="contact-subtitle">
+Message me on WhatsApp for the fastest reply.
+</p>
+
+<div class="contact-buttons">
+<a href="mailto:YOUR_EMAIL" class="contact-btn">📩 Email Me</a>
+<a href="https://wa.me/91XXXXXXXXXX" class="contact-btn">💬 WhatsApp</a>
+<a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" class="contact-btn">📷 Instagram</a>
+</div>
+
+</section>
+
+<a class="wa-float" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
 
 <script>
 function toggleMenu(){
@@ -945,25 +238,23 @@ document.getElementById("nav").classList.toggle("active");
 function closeMenu(){
 document.getElementById("nav").classList.remove("active");
 }
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
 
-    const id = this.getAttribute('href');
-    const target = document.querySelector(id);
-
-    if(target){
-      e.preventDefault();
-
-      window.scrollTo({
-        top: target.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-
-    closeMenu();
-  });
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+link.addEventListener('click', function(e) {
+const id = this.getAttribute('href');
+const target = document.querySelector(id);
+if(target){
+e.preventDefault();
+window.scrollTo({
+top: target.offsetTop - 80,
+behavior: 'smooth'
 });
- const counters = document.querySelectorAll(".stats-grid h2");
+}
+closeMenu();
+});
+});
+
+const counters = document.querySelectorAll(".stats-grid h2");
 counters.forEach(counter=>{
 let target=counter.innerText;
 let isPlus=target.includes("+");
@@ -981,21 +272,6 @@ counter.innerText=target+(isPlus?"+":"")+(isPercent?"%":"");
 }}
 update();
 });
-  const skillBars = document.querySelectorAll(".bar span");
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-const bar = entry.target;
-bar.style.width = bar.getAttribute("data-width");
-}
-});
-}, { threshold: 0.5 });
-
-skillBars.forEach(bar => {
-observer.observe(bar);
-});
-  /* SCROLL REVEAL */
 
 const cards = document.querySelectorAll(".offer-card");
 
@@ -1014,33 +290,22 @@ card.style.transform = "translateY(40px)";
 observer2.observe(card);
 });
 
-
-/* 3D MOUSE TILT */
 if(window.innerWidth > 768){
-
 cards.forEach(card=>{
 card.addEventListener("mousemove", e=>{
 const rect = card.getBoundingClientRect();
 const x = e.clientX - rect.left;
 const y = e.clientY - rect.top;
-
 const rotateX = ((y / rect.height) - 0.5) * 10;
 const rotateY = ((x / rect.width) - 0.5) * -10;
-
 card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
 });
-
 card.addEventListener("mouseleave", ()=>{
 card.style.transform = "rotateX(0) rotateY(0) scale(1)";
 });
 });
-
 }
-
 </script>
 
 </body>
 </html>
-
-
-
